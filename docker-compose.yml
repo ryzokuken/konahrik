@@ -1,0 +1,22 @@
+version: "3"
+services:
+  foo:
+    build: foo/
+    ports: 
+      - "5000:5000"
+    volumes:
+      - ./foo:/code
+  bar:
+    build: bar/
+    ports: 
+      - "3000:5000"
+    volumes:
+      - ./bar:/code
+  baz:
+    build: baz/
+    ports:
+      - "7000:5000"
+    volumes:
+      - ./baz:/code
+  redis:
+    image: "redis:alpine"
