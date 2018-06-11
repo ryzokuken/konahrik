@@ -12,6 +12,12 @@ services:
       - "3000:5000"
     volumes:
       - ./rahgot:/code
+  nahkriin:
+    build: nahkriin/
+    ports:
+      - "9000:5000"
+    volumes:
+      - ./nahkriin:/code
   vokun:
     build: vokun/
     ports:

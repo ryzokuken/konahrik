@@ -21,3 +21,9 @@ routers:
   servers:
   - port: 7001
     ip: 0.0.0.0
+- protocol: http
+  label: nahkriin
+  dtab: /svc => /$/inet/nahkriin/9000;
+  servers:
+  - port: 9001
+    ip: 0.0.0.0
