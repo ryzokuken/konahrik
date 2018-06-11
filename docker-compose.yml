@@ -12,12 +12,12 @@ services:
       - "3000:5000"
     volumes:
       - ./rahgot:/code
-  baz:
-    build: baz/
+  vokun:
+    build: vokun/
     ports:
       - "7000:5000"
     volumes:
-      - ./baz:/code
+      - ./vokun:/code
   redis:
     image: "redis:alpine"
   linkerd:

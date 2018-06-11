@@ -16,8 +16,8 @@ routers:
   - port: 5001
     ip: 0.0.0.0
 - protocol: http
-  label: baz
-  dtab: /svc => /$/inet/baz/5000;
+  label: vokun
+  dtab: /svc => /$/inet/vokun/5000;
   servers:
   - port: 7001
     ip: 0.0.0.0
