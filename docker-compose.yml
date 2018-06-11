@@ -1,11 +1,11 @@
 version: "3"
 services:
-  foo:
-    build: foo/
+  krosis:
+    build: krosis/
     ports: 
       - "5000:5000"
     volumes:
-      - ./foo:/code
+      - ./krosis:/code
   bar:
     build: bar/
     ports: 

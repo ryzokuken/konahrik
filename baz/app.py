@@ -9,9 +9,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    foo = requests.get('http://linkerd:5001').text
+    krosis = requests.get('http://linkerd:5001').text
     bar = requests.get('http://linkerd:3001').text
-    return "foo: {}\nbar: {}\n".format(foo, bar)
+    return "Krosis: {}\nbar: {}\n".format(krosis, bar)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)

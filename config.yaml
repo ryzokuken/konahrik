@@ -10,8 +10,8 @@ routers:
   - port: 3001
     ip: 0.0.0.0
 - protocol: http
-  label: foo
-  dtab: /svc => /$/inet/foo/5000;
+  label: krosis
+  dtab: /svc => /$/inet/krosis/5000;
   servers:
   - port: 5001
     ip: 0.0.0.0
