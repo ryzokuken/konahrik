@@ -4,8 +4,8 @@ admin:
 
 routers:
 - protocol: http
-  label: bar
-  dtab: /svc => /$/inet/bar/5000;
+  label: rahgot
+  dtab: /svc => /$/inet/rahgot/5000;
   servers:
   - port: 3001
     ip: 0.0.0.0

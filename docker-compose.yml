@@ -6,12 +6,12 @@ services:
       - "5000:5000"
     volumes:
       - ./krosis:/code
-  bar:
-    build: bar/
+  rahgot:
+    build: rahgot/
     ports: 
       - "3000:5000"
     volumes:
-      - ./bar:/code
+      - ./rahgot:/code
   baz:
     build: baz/
     ports:
