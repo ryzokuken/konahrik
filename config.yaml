@@ -1,0 +1,23 @@
+admin:
+  port: 9990
+  ip: 0.0.0.0
+
+routers:
+- protocol: http
+  label: bar
+  dtab: /svc => /$/inet/bar/5000;
+  servers:
+  - port: 3001
+    ip: 0.0.0.0
+- protocol: http
+  label: foo
+  dtab: /svc => /$/inet/foo/5000;
+  servers:
+  - port: 5001
+    ip: 0.0.0.0
+- protocol: http
+  label: baz
+  dtab: /svc => /$/inet/baz/5000;
+  servers:
+  - port: 7001
+    ip: 0.0.0.0

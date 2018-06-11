@@ -20,3 +20,14 @@ services:
       - ./baz:/code
   redis:
     image: "redis:alpine"
+  linkerd:
+    image: "buoyantio/linkerd:latest"
+    command:
+      - /config.yaml
+    ports:
+      - "9990:9990"
+      - "3001:3001"
+      - "5001:5001"
+      - "7001:7001"
+    volumes:
+      - ./config.yaml:/config.yaml
