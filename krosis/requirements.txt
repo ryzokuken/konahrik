@@ -1,2 +1,4 @@
 flask
 redis
+jaeger_client
+flask_opentracing
