@@ -1,2 +1,4 @@
 flask
 requests
+jaeger_client
+flask_opentracing
