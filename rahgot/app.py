@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    nahkriin = requests.get('http://linkerd:9001').text
+    nahkriin = requests.get('http://nahkriin:5000').text
     return "Rahgot\n Nahkriin: {}".format(nahkriin)
 
 if __name__ == "__main__":

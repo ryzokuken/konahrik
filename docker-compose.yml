@@ -1,39 +1,27 @@
 version: "3"
 services:
   krosis:
+    container_name: krosis
     build: krosis/
-    ports: 
-      - "5000:5000"
     volumes:
       - ./krosis:/code
   rahgot:
+    container_name: rahgot
     build: rahgot/
-    ports: 
-      - "3000:5000"
     volumes:
       - ./rahgot:/code
   nahkriin:
+    container_name: nahkriin
     build: nahkriin/
-    ports:
-      - "9000:5000"
     volumes:
       - ./nahkriin:/code
   vokun:
+    container_name: vokun
     build: vokun/
     ports:
-      - "7000:5000"
+      - 5000:5000
     volumes:
       - ./vokun:/code
   redis:
+    container_name: redis
     image: "redis:alpine"
-  linkerd:
-    image: "buoyantio/linkerd:latest"
-    command:
-      - /config.yaml
-    ports:
-      - "9990:9990"
-      - "3001:3001"
-      - "5001:5001"
-      - "7001:7001"
-    volumes:
-      - ./config.yaml:/config.yaml

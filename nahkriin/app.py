@@ -1,6 +1,6 @@
 import time
 
-from flask import Flask, abort
+from flask import Flask
 
 
 app = Flask(__name__)
@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    abort(500)
     return "Nahkriin\n"
 
 if __name__ == "__main__":
