@@ -33,3 +33,16 @@ def trace(tracer, ftracer):
                 return f(*args, **kwargs)
         return ftracer.trace()(wrapper)
     return decorator
+
+
+class GrTracer(object):
+    def __init__(self, app, name):
+        self.app = app
+        self.tracer, self.ftracer = initialize(app, name)
+
+    def trace(self, func):
+        return trace(self.tracer, self.ftracer)(func)
+
+    def bootstrap(self):
+        for k, f in self.app.view_functions.items():
+            self.app.view_functions[k] = self.trace(f)

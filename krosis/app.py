@@ -3,11 +3,11 @@ import time
 import redis
 from flask import Flask
 
-from middleware import initialize, trace
+from middleware import GrTracer
 
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
-tracer, ftracer = initialize(app, 'krosis')
+tracer = GrTracer(app, 'krosis')
 
 
 def get_hit_count():
@@ -23,11 +23,12 @@ def get_hit_count():
 
 
 @app.route('/')
-@trace(tracer, ftracer)
 def index_krosis():
     count = get_hit_count()
     return 'Krosis {}\n'.format(count)
 
+
+tracer.bootstrap()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
