@@ -3,11 +3,12 @@ import time
 import redis
 from flask import Flask
 
-from middleware import TracingMiddleware
+from middleware import initialize, trace
 
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
-app.wsgi_app = TracingMiddleware(app, 'krosis')
+tracer, ftracer = initialize(app, 'krosis')
+
 
 def get_hit_count():
     retries = 5
@@ -22,6 +23,7 @@ def get_hit_count():
 
 
 @app.route('/')
+@trace(tracer, ftracer)
 def index_krosis():
     count = get_hit_count()
     return 'Krosis {}\n'.format(count)

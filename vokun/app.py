@@ -1,13 +1,14 @@
 from flask import Flask
 import requests
 
-from middleware import TracingMiddleware
+from middleware import initialize, trace
 
 app = Flask(__name__)
-app.wsgi_app = TracingMiddleware(app, 'vokun')
+tracer, ftracer = initialize(app, 'vokun')
 
 
 @app.route('/')
+@trace(tracer, ftracer)
 def index_vokun():
     krosis = requests.get('http://krosis:5000').text
     rahgot = requests.get('http://rahgot:5000').text
