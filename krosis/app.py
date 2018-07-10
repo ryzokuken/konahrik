@@ -3,10 +3,12 @@ import time
 import redis
 from flask import Flask
 from grtracer import GrTracer
+from opentracing_instrumentation.client_hooks.strict_redis import install_patches
 
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
 tracer = GrTracer(app, 'krosis')
+install_patches()
 
 
 def get_hit_count():
