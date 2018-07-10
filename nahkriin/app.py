@@ -2,7 +2,7 @@ from flask import Flask
 from grtracer import GrTracer
 
 app = Flask(__name__)
-tracer = GrTracer(app, 'nahkriin')
+tracer = GrTracer(app, 'nahkriin', ['requests'])
 
 
 @app.route('/')

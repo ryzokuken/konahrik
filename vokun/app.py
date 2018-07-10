@@ -3,7 +3,7 @@ import requests
 from grtracer import GrTracer
 
 app = Flask(__name__)
-tracer = GrTracer(app, 'vokun')
+tracer = GrTracer(app, 'vokun', ['requests'])
 
 
 @app.route('/')
