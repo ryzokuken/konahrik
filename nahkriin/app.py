@@ -6,7 +6,7 @@ tracer = GrTracer(app, 'nahkriin')
 
 
 @app.route('/')
-def hello():
+def index_nahkriin():
     return "Nahkriin\n"
 
 

@@ -7,7 +7,7 @@ tracer = GrTracer(app, 'rahgot')
 
 
 @app.route('/')
-def hello():
+def index_rahgot():
     nahkriin = requests.get('http://nahkriin:5000').text
     return "Rahgot\n Nahkriin: {}".format(nahkriin)
 
