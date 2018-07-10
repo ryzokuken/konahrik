@@ -1,5 +1,3 @@
 flask
 redis
-jaeger_client
-flask_opentracing
-opentracing_instrumentation
+grtracer

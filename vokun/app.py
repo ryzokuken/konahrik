@@ -1,7 +1,6 @@
 from flask import Flask
 import requests
-
-from middleware import GrTracer
+from grtracer import GrTracer
 
 app = Flask(__name__)
 tracer = GrTracer(app, 'vokun')
